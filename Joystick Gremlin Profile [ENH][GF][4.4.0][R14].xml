@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" ?>
+<?xml version='1.0' encoding='utf-8'?>
 <profile version="14">
     <inputs>
         <input>
@@ -1316,7 +1316,7 @@
         <startup-mode>Use Heuristic</startup-mode>
         <macro-default-delay>0.05</macro-default-delay>
     </settings>
-    <logical-device/>
+    <logical-device />
     <library>
         <action id="37d01ee1-950f-4001-8639-61857846e07d" type="map-to-vjoy">
             <property type="int">
@@ -2802,38 +2802,10 @@
                 </property>
             </deadzone>
             <control-points>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>-1.0,-1.0</value>
-                </property>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>0.0,-1.0</value>
-                </property>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>-0.05777777777777793,0.0</value>
-                </property>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>0.0,0.0</value>
-                </property>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>0.05777777777777793,0.0</value>
-                </property>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>0.0,1.0</value>
-                </property>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>1.0,1.0</value>
-                </property>
-            </control-points>
+                <property type="point2d"><name>point</name><value>-1.0,-1.0</value></property><property type="point2d"><name>point</name><value>-0.10,0.0</value></property><property type="point2d"><name>point</name><value>0.10,0.0</value></property><property type="point2d"><name>point</name><value>1.0,1.0</value></property></control-points>
             <property type="string">
                 <name>curve-type</name>
-                <value>CubicBezierSpline</value>
+                <value>PiecewiseLinear</value>
             </property>
             <property type="string">
                 <name>action-label</name>
@@ -2908,38 +2880,10 @@
                 </property>
             </deadzone>
             <control-points>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>-1.0,1.0</value>
-                </property>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>0.0,1.0</value>
-                </property>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>-0.057777777777777706,0.0</value>
-                </property>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>0.0,0.0</value>
-                </property>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>0.057777777777777706,0.0</value>
-                </property>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>0.0,-1.0</value>
-                </property>
-                <property type="point2d">
-                    <name>point</name>
-                    <value>1.0,-1.0</value>
-                </property>
-            </control-points>
+                <property type="point2d"><name>point</name><value>-1.0,-1.0</value></property><property type="point2d"><name>point</name><value>-0.10,0.0</value></property><property type="point2d"><name>point</name><value>0.10,0.0</value></property><property type="point2d"><name>point</name><value>1.0,1.0</value></property></control-points>
             <property type="string">
                 <name>curve-type</name>
-                <value>CubicBezierSpline</value>
+                <value>PiecewiseLinear</value>
             </property>
             <property type="string">
                 <name>action-label</name>
@@ -7231,7 +7175,7 @@
         <mode parent="SCM Mode">Modifier</mode>
         <mode parent="SCM Mode">Nav Mode</mode>
     </modes>
-    <scripts/>
+    <scripts />
     <devices>
         <device>
             <device-id>0dcd7600-d727-11ef-800a-444553540000</device-id>
