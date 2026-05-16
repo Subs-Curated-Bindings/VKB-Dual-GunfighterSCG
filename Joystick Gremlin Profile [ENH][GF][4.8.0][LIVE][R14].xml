@@ -1318,6 +1318,216 @@
     </settings>
     <logical-device/>
     <library>
+        <action id="199117a3-965b-4a6a-afbf-87c58c201bdd" type="response-curve">
+            <deadzone>
+                <property type="float">
+                    <name>low</name>
+                    <value>-1.0</value>
+                </property>
+                <property type="float">
+                    <name>center-low</name>
+                    <value>0.0</value>
+                </property>
+                <property type="float">
+                    <name>center-high</name>
+                    <value>0.0</value>
+                </property>
+                <property type="float">
+                    <name>high</name>
+                    <value>1.0</value>
+                </property>
+            </deadzone>
+            <control-points>
+                <property type="point2d">
+                    <name>point</name>
+                    <value>-1.0,-1.0</value>
+                </property>
+                <property type="point2d">
+                    <name>point</name>
+                    <value>1.0,1.0</value>
+                </property>
+            </control-points>
+            <property type="string">
+                <name>curve-type</name>
+                <value>PiecewiseLinear</value>
+            </property>
+            <property type="string">
+                <name>action-label</name>
+                <value>Response Curve</value>
+            </property>
+            <property type="activation-mode">
+                <name>activation-mode</name>
+                <value>disallowed</value>
+            </property>
+        </action>
+        <action id="4275c2d8-57e8-4c22-b7ed-711111ff7fee" type="response-curve">
+            <deadzone>
+                <property type="float">
+                    <name>low</name>
+                    <value>-1.0</value>
+                </property>
+                <property type="float">
+                    <name>center-low</name>
+                    <value>0.0</value>
+                </property>
+                <property type="float">
+                    <name>center-high</name>
+                    <value>0.0</value>
+                </property>
+                <property type="float">
+                    <name>high</name>
+                    <value>1.0</value>
+                </property>
+            </deadzone>
+            <control-points>
+                <property type="point2d">
+                    <name>point</name>
+                    <value>-1.0,-1.0</value>
+                </property>
+                <property type="point2d">
+                    <name>point</name>
+                    <value>1.0,1.0</value>
+                </property>
+            </control-points>
+            <property type="string">
+                <name>curve-type</name>
+                <value>PiecewiseLinear</value>
+            </property>
+            <property type="string">
+                <name>action-label</name>
+                <value>Response Curve</value>
+            </property>
+            <property type="activation-mode">
+                <name>activation-mode</name>
+                <value>disallowed</value>
+            </property>
+        </action>
+        <action id="9528c34d-b7af-4b1b-84e9-1ec872ac4ff8" type="response-curve">
+            <deadzone>
+                <property type="float">
+                    <name>low</name>
+                    <value>-1.0</value>
+                </property>
+                <property type="float">
+                    <name>center-low</name>
+                    <value>0.0</value>
+                </property>
+                <property type="float">
+                    <name>center-high</name>
+                    <value>0.0</value>
+                </property>
+                <property type="float">
+                    <name>high</name>
+                    <value>1.0</value>
+                </property>
+            </deadzone>
+            <control-points>
+                <property type="point2d">
+                    <name>point</name>
+                    <value>-1.0,-1.0</value>
+                </property>
+                <property type="point2d">
+                    <name>point</name>
+                    <value>1.0,1.0</value>
+                </property>
+            </control-points>
+            <property type="string">
+                <name>curve-type</name>
+                <value>PiecewiseLinear</value>
+            </property>
+            <property type="string">
+                <name>action-label</name>
+                <value>Response Curve</value>
+            </property>
+            <property type="activation-mode">
+                <name>activation-mode</name>
+                <value>disallowed</value>
+            </property>
+        </action>
+        <action id="46d795b8-7592-4b84-a6ff-1392683dfced" type="response-curve">
+            <deadzone>
+                <property type="float">
+                    <name>low</name>
+                    <value>-1.0</value>
+                </property>
+                <property type="float">
+                    <name>center-low</name>
+                    <value>0.0</value>
+                </property>
+                <property type="float">
+                    <name>center-high</name>
+                    <value>0.0</value>
+                </property>
+                <property type="float">
+                    <name>high</name>
+                    <value>1.0</value>
+                </property>
+            </deadzone>
+            <control-points>
+                <property type="point2d">
+                    <name>point</name>
+                    <value>-1.0,-1.0</value>
+                </property>
+                <property type="point2d">
+                    <name>point</name>
+                    <value>1.0,1.0</value>
+                </property>
+            </control-points>
+            <property type="string">
+                <name>curve-type</name>
+                <value>PiecewiseLinear</value>
+            </property>
+            <property type="string">
+                <name>action-label</name>
+                <value>Response Curve</value>
+            </property>
+            <property type="activation-mode">
+                <name>activation-mode</name>
+                <value>disallowed</value>
+            </property>
+        </action>
+        <action id="f5098ad0-d884-4ab9-94cf-390aaf321695" type="response-curve">
+            <deadzone>
+                <property type="float">
+                    <name>low</name>
+                    <value>-1.0</value>
+                </property>
+                <property type="float">
+                    <name>center-low</name>
+                    <value>0.0</value>
+                </property>
+                <property type="float">
+                    <name>center-high</name>
+                    <value>0.0</value>
+                </property>
+                <property type="float">
+                    <name>high</name>
+                    <value>1.0</value>
+                </property>
+            </deadzone>
+            <control-points>
+                <property type="point2d">
+                    <name>point</name>
+                    <value>-1.0,-1.0</value>
+                </property>
+                <property type="point2d">
+                    <name>point</name>
+                    <value>1.0,1.0</value>
+                </property>
+            </control-points>
+            <property type="string">
+                <name>curve-type</name>
+                <value>PiecewiseLinear</value>
+            </property>
+            <property type="string">
+                <name>action-label</name>
+                <value>Response Curve</value>
+            </property>
+            <property type="activation-mode">
+                <name>activation-mode</name>
+                <value>disallowed</value>
+            </property>
+        </action>
         <action id="37d01ee1-950f-4001-8639-61857846e07d" type="map-to-vjoy">
             <property type="int">
                 <name>vjoy-device-id</name>
@@ -5549,6 +5759,7 @@
         </action>
         <action id="5cfe713e-fea7-4474-a366-ee853611a23f" type="root">
             <actions>
+                <action-id>199117a3-965b-4a6a-afbf-87c58c201bdd</action-id>
                 <action-id>d1eea7bc-a606-4e06-b659-988195387980</action-id>
             </actions>
             <property type="string">
@@ -5592,6 +5803,7 @@
         </action>
         <action id="1195c7e1-581f-4f20-8baa-60f6194ccc56" type="root">
             <actions>
+                <action-id>4275c2d8-57e8-4c22-b7ed-711111ff7fee</action-id>
                 <action-id>dbb6c144-2236-4031-a2cd-94e6d4e285c5</action-id>
             </actions>
             <property type="string">
@@ -5635,6 +5847,7 @@
         </action>
         <action id="6bf0894e-57d1-4337-8253-f3dbc8908f5d" type="root">
             <actions>
+                <action-id>9528c34d-b7af-4b1b-84e9-1ec872ac4ff8</action-id>
                 <action-id>9af1f061-7742-4199-9039-7af31ea99a3c</action-id>
             </actions>
             <property type="string">
@@ -5678,6 +5891,7 @@
         </action>
         <action id="ed1248b6-6e8d-47ed-aa02-ea75143239f6" type="root">
             <actions>
+                <action-id>46d795b8-7592-4b84-a6ff-1392683dfced</action-id>
                 <action-id>cc21432e-e436-4bad-974a-784caee9ae2c</action-id>
             </actions>
             <property type="string">
@@ -5721,6 +5935,7 @@
         </action>
         <action id="7dd33718-04f0-4c77-8103-79f5f28f47be" type="root">
             <actions>
+                <action-id>f5098ad0-d884-4ab9-94cf-390aaf321695</action-id>
                 <action-id>0a7ee8d5-12c0-4e15-a3b3-e912011a63f8</action-id>
             </actions>
             <property type="string">
