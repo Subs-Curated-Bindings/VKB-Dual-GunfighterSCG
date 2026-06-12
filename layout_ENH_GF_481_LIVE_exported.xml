@@ -529,7 +529,7 @@
    <rebind input="js2_button13" activationMode="double_tap"/>
   </action>
   <action name="v_salvage_decrease_beam_spacing">
-   <rebind input="js1_button36"/>
+   <rebind input="js1_button38"/>
   </action>
   <action name="v_salvage_focus_all_heads">
    <rebind input="js2_button25"/>
