@@ -139,7 +139,7 @@
   </action>
  </actionmap>
  <actionmap name="spaceship_view">
-  <action name="v_ads_hold">
+  <action name="v_ads_stable_max_zoom_hold">
    <rebind input="js1_button4"/>
   </action>
   <action name="v_ads_toggle">
@@ -355,10 +355,7 @@
   <action name="v_dock_toggle_view">
    <rebind input="js1_button37"/>
   </action>
-  <action name="v_invoke_docking">
-   <rebind input="js1_button13"/>
-  </action>
-  <action name="v_toggle_docking_mode">
+  <action name="v_toggle_docking_request">
    <rebind input="js1_button13"/>
   </action>
  </actionmap>

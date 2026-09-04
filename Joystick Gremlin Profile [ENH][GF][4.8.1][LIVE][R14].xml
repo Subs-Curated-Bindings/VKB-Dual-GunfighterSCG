@@ -1382,11 +1382,11 @@
             <control-points>
                 <property type="point2d">
                     <name>point</name>
-                    <value>-1.0,-1.0</value>
+                    <value>-1.0,1.0</value>
                 </property>
                 <property type="point2d">
                     <name>point</name>
-                    <value>1.0,1.0</value>
+                    <value>1.0,-1.0</value>
                 </property>
             </control-points>
             <property type="string">
@@ -3647,11 +3647,17 @@
         <action id="6f61ced3-3e39-4333-81f2-2856ee8e54b3" type="change-mode">
             <property type="string">
                 <name>change-type</name>
-                <value>Previous</value>
+                <value>Temporary</value>
             </property>
+            <target-mode>
+                <property type="string">
+                    <name>name</name>
+                    <value>SCM Mode</value>
+                </property>
+            </target-mode>
             <property type="string">
                 <name>action-label</name>
-                <value>L-D1 "Modifier | Modifier" Pop mode stack -- return to the prior active mode.</value>
+                <value>L-D1 "Modifier | Modifier" Release Modifier -- return to SCM Mode (JG R15).</value>
             </property>
             <property type="activation-mode">
                 <name>activation-mode</name>
@@ -4845,6 +4851,10 @@
                 <name>is-exclusive</name>
                 <value>False</value>
             </property>
+            <property type="bool">
+                <name>is-preemptive</name>
+                <value>False</value>
+            </property>
             <property type="string">
                 <name>repeat-mode</name>
                 <value>Single</value>
@@ -4967,6 +4977,10 @@
                 <name>is-exclusive</name>
                 <value>False</value>
             </property>
+            <property type="bool">
+                <name>is-preemptive</name>
+                <value>False</value>
+            </property>
             <property type="string">
                 <name>repeat-mode</name>
                 <value>Single</value>
@@ -5075,7 +5089,7 @@
             </property>
             <property type="string">
                 <name>action-label</name>
-                <value>L-A3.down.tap</value>
+                <value>L-A3.down</value>
             </property>
             <property type="activation-mode">
                 <name>activation-mode</name>
@@ -5085,123 +5099,11 @@
         <action id="5977c524-8a83-4e3d-8158-cd04a6c54a73" type="description">
             <property type="string">
                 <name>description</name>
-                <value>Tap toggles your landing gear (or auto-lands / requests docking when available). Hold about half a second to send a quick Right Alt+N chord -- Star Citizen's dock/undock toggle, which can't be bound to a stick button directly.</value>
+                <value>Toggles your landing gear (or auto-lands / requests docking when available). Star Citizen 4.10 made dock/undock a real bind, so the old Right Alt+N keyboard chord is gone.</value>
             </property>
             <property type="string">
                 <name>action-label</name>
                 <value>Description</value>
-            </property>
-            <property type="activation-mode">
-                <name>activation-mode</name>
-                <value>disallowed</value>
-            </property>
-        </action>
-        <action id="988cf351-6e5e-4977-9c24-4f77d67d2483" type="macro">
-            <property type="bool">
-                <name>is-exclusive</name>
-                <value>False</value>
-            </property>
-            <property type="string">
-                <name>repeat-mode</name>
-                <value>Single</value>
-            </property>
-            <property type="int">
-                <name>repeat-count</name>
-                <value>1</value>
-            </property>
-            <property type="float">
-                <name>repeat-delay</name>
-                <value>0.1</value>
-            </property>
-            <macro-action type="key">
-                <property type="int">
-                    <name>scan-code</name>
-                    <value>56</value>
-                </property>
-                <property type="bool">
-                    <name>is-extended</name>
-                    <value>True</value>
-                </property>
-                <property type="bool">
-                    <name>is-pressed</name>
-                    <value>True</value>
-                </property>
-            </macro-action>
-            <macro-action type="key">
-                <property type="int">
-                    <name>scan-code</name>
-                    <value>49</value>
-                </property>
-                <property type="bool">
-                    <name>is-extended</name>
-                    <value>False</value>
-                </property>
-                <property type="bool">
-                    <name>is-pressed</name>
-                    <value>True</value>
-                </property>
-            </macro-action>
-            <macro-action type="pause">
-                <property type="float">
-                    <name>duration</name>
-                    <value>0.05</value>
-                </property>
-            </macro-action>
-            <macro-action type="key">
-                <property type="int">
-                    <name>scan-code</name>
-                    <value>49</value>
-                </property>
-                <property type="bool">
-                    <name>is-extended</name>
-                    <value>False</value>
-                </property>
-                <property type="bool">
-                    <name>is-pressed</name>
-                    <value>False</value>
-                </property>
-            </macro-action>
-            <macro-action type="key">
-                <property type="int">
-                    <name>scan-code</name>
-                    <value>56</value>
-                </property>
-                <property type="bool">
-                    <name>is-extended</name>
-                    <value>True</value>
-                </property>
-                <property type="bool">
-                    <name>is-pressed</name>
-                    <value>False</value>
-                </property>
-            </macro-action>
-            <property type="string">
-                <name>action-label</name>
-                <value>L-A3.down.hold "Dock/Undock | Flight Control" Quick Right Alt+N chord -- SC docking toggle</value>
-            </property>
-            <property type="activation-mode">
-                <name>activation-mode</name>
-                <value>press</value>
-            </property>
-        </action>
-        <action id="eebeace8-3adb-4d20-a2f9-a3cb3ccb04f1" type="tempo">
-            <short-actions>
-                <action-id>2f929000-6c4c-4782-b76e-7245ff5bd8fa</action-id>
-            </short-actions>
-            <long-actions>
-                <action-id>988cf351-6e5e-4977-9c24-4f77d67d2483</action-id>
-            </long-actions>
-            <property type="float">
-                <name>threshold</name>
-                <value>0.5</value>
-            </property>
-            <property type="string">
-                <name>activate-on</name>
-                <value>release</value>
-            </property>
-            <property type="string">
-                <name>action-label</name>
-                <value>L-A3.down</value>
             </property>
             <property type="activation-mode">
                 <name>activation-mode</name>
@@ -5551,6 +5453,10 @@
                 <name>is-exclusive</name>
                 <value>False</value>
             </property>
+            <property type="bool">
+                <name>is-preemptive</name>
+                <value>False</value>
+            </property>
             <property type="string">
                 <name>repeat-mode</name>
                 <value>Single</value>
@@ -5830,11 +5736,11 @@
             <control-points>
                 <property type="point2d">
                     <name>point</name>
-                    <value>-1.0,1.0</value>
+                    <value>-1.0,-1.0</value>
                 </property>
                 <property type="point2d">
                     <name>point</name>
-                    <value>1.0,-1.0</value>
+                    <value>1.0,1.0</value>
                 </property>
             </control-points>
             <property type="string">
@@ -5872,11 +5778,11 @@
             <control-points>
                 <property type="point2d">
                     <name>point</name>
-                    <value>-1.0,1.0</value>
+                    <value>-1.0,-1.0</value>
                 </property>
                 <property type="point2d">
                     <name>point</name>
-                    <value>1.0,-1.0</value>
+                    <value>1.0,1.0</value>
                 </property>
             </control-points>
             <property type="string">
@@ -5891,7 +5797,8 @@
                 <name>activation-mode</name>
                 <value>disallowed</value>
             </property>
-        </action><action id="cdca773d-6d57-4332-a13e-ea38640966bb" type="tempo">
+        </action>
+        <action id="cdca773d-6d57-4332-a13e-ea38640966bb" type="tempo">
             <short-actions>
                 <action-id>37d01ee1-950f-4001-8639-61857846e07d</action-id>
             </short-actions>
@@ -7533,11 +7440,11 @@
         <action id="7986a859-4186-440e-a93f-aad924a28652" type="root">
             <actions>
                 <action-id>5977c524-8a83-4e3d-8158-cd04a6c54a73</action-id>
-                <action-id>eebeace8-3adb-4d20-a2f9-a3cb3ccb04f1</action-id>
+                <action-id>2f929000-6c4c-4782-b76e-7245ff5bd8fa</action-id>
             </actions>
             <property type="string">
                 <name>action-label</name>
-                <value>Tempo (Tap/Hold) Landing / Docking</value>
+                <value>Landing / Docking</value>
             </property>
             <property type="activation-mode">
                 <name>activation-mode</name>
@@ -8094,7 +8001,7 @@
                 <value>disallowed</value>
             </property>
         </action>
-</library>
+    </library>
     <modes>
         <mode>SCM Mode</mode>
         <mode parent="SCM Mode">Auxiliary Mode</mode>
