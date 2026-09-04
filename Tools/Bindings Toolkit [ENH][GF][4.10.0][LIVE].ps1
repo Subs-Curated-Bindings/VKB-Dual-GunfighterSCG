@@ -26,7 +26,7 @@
 
     WORKFLOW (typical case -- right after loading the Gunfighter layout):
       1. Fully close Star Citizen and the RSI Launcher.
-      2. Double-click "Bindings Toolkit [ENH][GF][4.8.1][LIVE].bat".
+      2. Double-click "Bindings Toolkit [ENH][GF][4.10.0][LIVE].bat".
       3. Pick the channel (or All) and the operation.
       4. Launch SC, verify in Customization > Keybindings.
 
@@ -44,14 +44,14 @@
     Clear, Restore, and Prune still prompt for the confirm step.
 
 .EXAMPLE
-    .\Bindings Toolkit [ENH][GF][4.8.1][LIVE].ps1
+    .\Bindings Toolkit [ENH][GF][4.10.0][LIVE].ps1
     Show the menu, prompt for channel as needed.
 
 .EXAMPLE
-    .\Bindings Toolkit [ENH][GF][4.8.1][LIVE].ps1 -Action MFD -Channel LIVE
+    .\Bindings Toolkit [ENH][GF][4.10.0][LIVE].ps1 -Action MFD -Channel LIVE
 
 .EXAMPLE
-    .\Bindings Toolkit [ENH][GF][4.8.1][LIVE].ps1 -Action Invert -Channel PTU
+    .\Bindings Toolkit [ENH][GF][4.10.0][LIVE].ps1 -Action Invert -Channel PTU
 #>
 [CmdletBinding()]
 param(
@@ -724,8 +724,8 @@ function Get-HidHideStatus {
 
 function Get-JoystickGremlinLoadedProfile {
     param([string]$ShippedProfile)
-    # JG R14 puts the loaded profile path in its window title, format:
-    #   "<full path>.xml - Joystick Gremlin[ R14.x]"  (version suffix optional)
+    # JG puts the loaded profile path in its window title, format:
+    #   "<full path>.xml - Joystick Gremlin[ R15+]"  (version suffix optional)
     # That's the authoritative signal for what file JG has open right now --
     # works whether the user loaded the shipped profile or did Save As to a
     # different name/location. Also hash-compare the LOADED file's contents
@@ -792,9 +792,11 @@ function Get-ProfileDevices {
 
 function Get-JoystickGremlinVersion {
     param([string]$ExePath)
-    # JG R14 PyInstaller builds ship with empty VersionInfo metadata so
-    # we fall back to a file-size + year heuristic. R13 ~ 2.4 MB / 2019,
-    # R14 ~ 4 MB / 2026.
+    # JG PyInstaller builds ship with empty VersionInfo metadata so we fall
+    # back to a file-size + year heuristic. R13 ~ 2.4 MB / 2019; R14 and R15
+    # are both ~4-4.5 MB, so size can tell R13 from "R14 or newer" but cannot
+    # separate R14 from R15 -- report that honestly rather than guessing 14,
+    # or every R15 user trips the "needs R15" warning below.
     if (-not $ExePath -or -not (Test-Path -LiteralPath $ExePath)) {
         return @{ Major = $null; Display = '(exe not found)' }
     }
@@ -807,7 +809,7 @@ function Get-JoystickGremlinVersion {
     $sizeMb = [math]::Round($info.Length / 1MB, 1)
     $year   = $info.LastWriteTime.Year
     if ($info.Length -gt 3500000) {
-        return @{ Major = 14; Display = "R14.x heuristic ($sizeMb MB, $year)" }
+        return @{ Major = $null; Display = "R14 or newer, heuristic ($sizeMb MB, $year)" }
     } elseif ($info.Length -gt 1500000) {
         return @{ Major = 13; Display = "R13.x heuristic ($sizeMb MB, $year)" }
     }
@@ -952,7 +954,7 @@ function Show-StackHealth {
     }
     else {
         if ($jgPaths.Count -gt 1) {
-            Write-Host ("  JG installs found: {0} -- multiple installs can cause version confusion (R13 vs R14)" -f $jgPaths.Count) -ForegroundColor Yellow
+            Write-Host ("  JG installs found: {0} -- multiple installs can cause version confusion (R13 vs R14 vs R15)" -f $jgPaths.Count) -ForegroundColor Yellow
         }
         foreach ($path in $jgPaths) {
             $risk = Test-JoystickGremlinLocation -Path $path
@@ -961,14 +963,14 @@ function Show-StackHealth {
             $label  = switch ($risk.Risk) { 'err' { 'BAD ' } 'warn' { 'WARN' } default { 'OK  ' } }
             Write-Host ("    [{0}] {1}" -f $label, $path) -ForegroundColor $colour
             Write-Host ("           version: {0} -- {1}" -f $ver.Display, $risk.Reason) -ForegroundColor Gray
-            if ($ver.Major -eq 13) {
-                Write-Host "           !! R13 cannot load R14 profiles -- update to R14.x or this profile won't open" -ForegroundColor Red
+            if ($ver.Major -and $ver.Major -lt 15) {
+                Write-Host ("           !! JG R{0} cannot load this profile -- it needs R15. Update Joystick Gremlin or it won't open." -f $ver.Major) -ForegroundColor Red
             }
         }
     }
 
     # --- JG's currently-loaded profile (parsed from window title) ---
-    $shipped = Join-Path $ScriptRoot '..\Joystick Gremlin Profile [ENH][GF][4.8.1][LIVE][R14].xml'
+    $shipped = Join-Path $ScriptRoot '..\Joystick Gremlin Profile [ENH][GF][4.10.0][LIVE][R15].xml'
     $shipped = [System.IO.Path]::GetFullPath($shipped)
     $loaded = Get-JoystickGremlinLoadedProfile -ShippedProfile $shipped
     if (-not $loaded.JgRunning) {
